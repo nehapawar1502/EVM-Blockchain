@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.0.0-beta.37/dist/web3.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/7b9454f5d5.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/castVote.css">
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <title>Online Voting System/castVote</title>
+
+  <style>
+    table,
+    th,
+    td,
+    tr {
+      border: 1px solid grey;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <img src="" alt="">
+    <a class="navbar-brand" href="/profile"><b>E-VOTING SYSTEM</b></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/profile">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact us</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user mx-3" style="color:white;margin-top:auto;">
+      <h6><i class="fas fa-user"></i> Welcome, <%= name %>
+      </h6>
+    </div>
+    <div class="button">
+      <a class="btn btn-danger" href="/logout" role="button">Logout</a>
+      <a href="/userProfile" role="button" class="btn btn-success">Profile</a>
+
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top:82px;">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 style="font-weight: bold;font-family: 'Fredoka One', cursive;">~WELCOME~</h1>
+      </div>
+      <div class="col-md-12" style="margin-top: 10px;color:darkblue;font-weight:bold;">
+        <hr>
+        <h5 class="text-center contectEffect"><b>Now you are on final voting page for giving your vote to your
+            preferable candidate. Please 'click' on the cast vote button for confirming your vote... </b></h5>
+        <hr>
+      </div>
+      <div class="col-md-12 my-3">
+        <table class="table table-hover shadow" id="myTable" style="text-align:center;">
+          <thead>
+            <tr style="background-color:orangered;color:white;">
+              <th scope="col">S.No</th>
+              <th scope="col">Candidate Name</th>
+              <th scope="col">Poll Your vote</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td scope="col" id="cad1">Candidate 1</td>
+              <td style="display: none;" id="cad1count">0</td>
+
+              <td>
+                <a class="btn btn-success" role="button" onclick="Vote(1)"
+                  style="background-color:darkgreen;color:white;">Cast
+                  Vote</a>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">2</th>
+              <td scope="col" id="cad2">Candidate 2</td>
+              <td style="display: none;" id="cad2count">0</td>
+              <td>
+                <a class="btn btn-success" role="button" onclick="Vote(2)"
+                  style="background-color:darkgreen;color:white;">Cast
+                  Vote</a>
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="b fixed-bottom" style="margin-top:60px; width:1537px;margin-left:0px;">
+    <p>© 2020-2021 E-Voting System, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+    integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+  <script src="js/contract.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script language="javascript" type="text/javascript" src="js/web3.min.js"></script>
+  <script src="vendor/web3/dist/web3.js"></script>
+  <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.0.0-beta.37/dist/web3.min.js"></script>
+
+  <script>
+
+
+
+    var myContract;
+    let web3
+    if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
+      //We are in the browser and metamask is running
+
+      web3 = new Web3(window.web3.currentProvider);
+    }
+    async function CheckMetamaskConnection() {
+      // Modern dapp browsers...
+      if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+        try {
+          // Request account access if needed
+          await ethereum.enable();
+          // Acccounts now exposed
+          return true;
+        } catch (error) {
+          // User denied account access...
+          return false;
+        }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+        window.web3 = new Web3(web3.currentProvider);
+        // Acccounts always exposed
+
+        return true;
+      }
+      // Non-dapp browsers...
+      else {
+        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+        return false;
+      }
+    }
+    // CONTRACT ADDRESS CONTRACT ABI
+    $(document).ready(async function () {
+      var IsMetamask = await CheckMetamaskConnection();
+      if (IsMetamask) {
+        myContract = new web3.eth.Contract(SmartContractABI, SmartContractAddress);
+        getCandidate(1);
+        getCandidate(2);
+
+        await myContract.events.eventVote({
+          fromBlock: 0
+        }, function (err, event) {
+          console.log("event :", event);
+          getCandidate(event.args._candidateid.toNumber());
+        });
+        console.log("myContract :", myContract);
+        console.log("Metamask detected!")
+      } else {
+        console.log("Metamask not detected");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Metamask not detected!',
+          onClose() {
+            location.reload();
+          }
+        });
+      }
+    });
+
+    async function getCandidate(candidateId) {
+      try {
+        const result = await myContract.methods.candidates(candidateId).call();
+        document.getElementById(`cad${candidateId}`).innerHTML = result.name;
+        document.getElementById(`cad${candidateId}count`).innerHTML = result.voteCount;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    // Vote for a candidate
+    async function Vote(cad) {
+      try {
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const result = await myContract.methods.vote(cad).send({ from: accounts[0] });
+        console.log("We are winning!");
+      } catch (err) {
+        console.log("Can not connect to the smart contract");
+      }
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>

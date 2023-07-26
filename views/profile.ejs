@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/home.css">
+  <script src="https://kit.fontawesome.com/7b9454f5d5.js" crossorigin="anonymous"></script>
+
+  <title>Online Voting System/profile</title>
+  <style>
+    html {
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
+
+    .wrapper {
+      width: 770px;
+      margin: 0 auto;
+      color: black;
+      margin-top: -16px;
+      background-color: white;
+      padding-bottom: 20px;
+
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <img src="" alt="">
+    <a class="navbar-brand" href="/profile"><b>E-VOTING SYSTEM</b></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/profile">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact us</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user mx-3" style="color:white;margin-top:auto;">
+      <h6><i class="fas fa-user"></i> Welcome, <%= name %>
+      </h6>
+    </div>
+    <div class="button">
+      <a class="btn btn-danger" href="/logout" role="button">Logout</a>
+      <a href="/userProfile" role="button" class="btn btn-success">Profile</a>
+
+    </div>
+  </nav>
+
+
+  <div class="container" style="margin-top:85px;">
+    <div class="wrapper bg-light">
+      <h2 style="text-align:center;">My Profile</h2>
+      <div style='text-align:center;'>
+        <img src='img/Profile.png' style='width:192px;border: 2px solid black;border-radius:50%;'>
+      </div>";
+      <div style="text-align:center;">
+        <b style="font-size:25px;">Welcome, </b>
+        <h4>User</h4>
+        <table class="table table-bordered">
+          <tr>
+            <td><b>Username</b></td>
+            <td><%= name %></td>
+          </tr>
+
+          <tr>
+            <td><b>Email</b></td>
+            <td><%= email %></td>
+          </tr>
+
+          <tr>
+            <td><b>Phone No</b></td>
+            <td>1234567890</td>
+          </tr>
+
+          <tr>
+            <td><b>Adhar No</b></td>
+            <td>1234-5678-9101</td>
+          </tr>
+
+          <tr>
+            <td><b>Voter Id</b></td>
+            <td>159462</td>
+          </tr>
+          <tr>
+            <td><b>Gender</b></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><b>Address</b></td>
+            <td></td>
+          </tr>
+        </table>
+
+      </div>
+
+      <form action="" method="post">
+        <div class="row">
+          <div class="col-md-12 my-2">
+            <button type="submit" class="btn text-light"
+              style="float:right;width:135px;margin-right:15px;background-color:darkgreen;">Edit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="b" style="margin-top:35px;">
+    <p>© 2022-2023 E-Voting System, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+    integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+  <script src="js/contract.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script language="javascript" type="text/javascript" src="js/web3.min.js"></script>
+  <script src="vendor/web3/dist/web3.js"></script>
+  <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+  <script>
+    var myContract;
+    let web3
+    if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
+      //We are in the browser and metamask is running
+      web3 = new Web3(window.web3.currentProvider);
+    }
+    async function CheckMetamaskConnection() {
+      // Modern dapp browsers...
+      if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+        try {
+          // Request account access if needed
+          await ethereum.enable();
+          // Acccounts now exposed
+          return true;
+        } catch (error) {
+          // User denied account access...
+          return false;
+        }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+        window.web3 = new Web3(web3.currentProvider);
+        // Acccounts always exposed
+
+        return true;
+      }
+      // Non-dapp browsers...
+      else {
+        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+        return false;
+      }
+    }
+
+    $(document).ready(async function () {
+      var IsMetamask = await CheckMetamaskConnection();
+      if (IsMetamask) {
+        myContract = await web3.eth.contract(SmartContractABI).at(SmartContractAddress);
+        getCandidate(1);
+        getCandidate(2);
+
+        await myContract.eventVote({
+          fromBlock: 0
+        }, function (err, event) {
+          console.log("event :", event);
+          getCandidate(event.args._candidateid.toNumber());
+        });
+        console.log("myContract :", myContract);
+        console.log("Metamask detected!")
+      } else {
+        console.log("Metamask not detected");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Metamask not detected!',
+          onClose() {
+            location.reload();
+          }
+        });
+      }
+    });
+
+    async function getCandidate(cad) {
+      await myContract.candidates(cad, function (err, result) {
+        if (!err) {
+          document.getElementById("cad" + cad).innerHTML = result[1];
+          document.getElementById("cad" + cad + 'count').innerHTML = result[2].toNumber();
+        }
+      });
+    }
+
+    async function Vote(cad) {
+      await myContract.vote(cad, function (err, result) {
+        if (!err) {
+          console.log("We are winning!");
+        } else {
+          console.log("Can not connect to the smart contract");
+        }
+      })
+    }
+   /* function yourFunction() {
+      const alert = document.getElementById("alert")
+      const can1 = document.getElementById("cad1").innerText
+      const can2 = document.getElementById("cad2").innerText
+      const can1N = Number(document.getElementById("cad1count").innerText)
+      const can2N = Number(document.getElementById("cad2count").innerText)
+     var obj = { [can1]: can1N, [can2]: can2N};
+      var maxCanN  = (Object.keys(obj).reduce(function (can1, can2) { return obj[can1] > obj[can2] ? can1 : can2 }));
+      var max = obj[maxCanN]
+      const html = `<span class="d-flex justify-content-center" ><strong class="mx-2">${maxCanN} </strong> Having Maximum votes : <strong class="mx-2">${max}</strong></span>`
+      alert.style.display = "block";
+      alert.innerHTML = html;
+      
+      
+    }*/
+   
+  </script>
+</body>
+
+</html>

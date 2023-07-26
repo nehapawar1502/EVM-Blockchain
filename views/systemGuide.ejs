@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7b9454f5d5.js" crossorigin="anonymous"></script>
+   
+
+    <link rel="stylesheet" href="css/home.css">
+
+
+    <title>Online Voting System</title>
+</head>
+<style>
+
+    html {
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        cursor: pointer;
+
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    .info {
+        font-size: 17px;
+    }
+</style>
+
+<body class="bg-light">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <img src="" alt="">
+        <a class="navbar-brand" href="/profile"><b>E-VOTING SYSTEM</b></a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+    
+            <li class="nav-item active">
+              <a class="nav-link" href="/profile">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="user mx-3" style="color:white;margin-top:auto;">
+          <h6><i class="fas fa-user"></i> Welcome, <%= name %>
+          </h6>
+        </div>
+        <div class="button">
+          <a class="btn btn-danger" href="/logout" role="button">Logout</a>
+          <a href="/userProfile" role="button" class="btn btn-success">Profile</a>
+    
+        </div>
+      </nav>
+
+
+    <div class="text mx-auto d-block;"
+        style="margin-top:84px;border:2px solid green;width:630px;background-color:green;color:white;">
+        <h3 style="text-align:center;">***System Guide***</h3>
+    </div>
+    <div class="container shadow"
+        style="margin-top:0px;background-color:white;border-top: 2px solid green;height: 640px;">
+        <div class="info">
+            <h2>Welcome</h2>
+            <h4>These are few guidelines for user :</h4>
+            <h4>Voter registration :</h4>
+            <ul>
+                <li><b>1. </b> Casting the vote user needs to first register himself. For this registration purpose the
+                    user
+                    will
+                    be provided a voter registration form on this website. </li>
+                <li><b>2. </b>The voter can only register in the registration phase. After the registration phase is
+                    over the
+                    user cannot registered and thus will not be able to vote. </li>
+                <li><b>3. </b>For registration,the users age will have to enter the aadhar card number and account
+                    address
+                    which the user will be using forvoting purpose.</li>
+                <li><b>4. </b>At the first stage the users age will be checked if the users is 18 or above 187 years of
+                    age
+                    then only he is eligible to vote. </li>
+                <li><b>5. </b>The second stage is otp verification. this stage is required to validate the voter itself.
+                    after entering the aadhar number and successful age verification.</li>
+                <li><b>6. </b> After entering correct otp user will get successfully registerd.</li>
+            </ul>
+            <h4>Voting process</h4>
+            <ul>
+                <li> Overall voting process is divided into three phases all of which will be initilized and terminated
+                    by
+                    the admin user have to participate in the process according to current phase.</li>
+                <li><b>1. Registration phase</b> during this phase all of the users (which are going to cast the vote)
+                    will
+                    be carried out.</li>
+                <li><b>2. Voting phase</b> after initilization of voting phase from the admin,user can cast the vote in
+                    voting section.the casting of vote can be simply done by checking on "vote"button, after which
+                    transaction will be initiated and after confirming transaction the vote will get successfully casted
+                    after voting phase gets over user will not able to cast vote. </li>
+                <li><b>3. Result phase</b> this is the final stage of whole voting process during which the results of
+                    election will be displayed at "result section".</li>
+            </ul>
+        </div>
+
+
+
+        <div class="wrapper">
+
+        </div>
+    </div>
+
+    <footer class="b" style="margin-top:35px;">
+        <p>© 2022-2023 E-Voting System, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

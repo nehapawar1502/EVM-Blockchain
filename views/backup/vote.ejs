@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <title>E-Voting Machine</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <style>
+    /*body{
+		  background-image: url("./Picture1.png");
+		  background-repeat: no-repeat;
+		 
+		  background-size: cover;
+		  height: 100vh;
+		  color: white;
+		}*/
+    body {
+      background-image: linear-gradient(to bottom right, rgb(0, 98, 255), rgb(236, 236, 153));
+      height: 100vh;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .font {
+      font-family: 'Oswald', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="text-secondary font-weight-light ">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">EVM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+      </div>
+      <h5 class="nav-link active mx-2 text-white" aria-current="page">
+        <%= name %>
+      </h5>
+      <a class="btn btn-danger" href="/logout" role="button">Logout</a>
+    </div>
+  </nav>
+<div class="container">
+  <div class="container mt-5">
+    <div class="container d-flex justify-content-center ">
+      <h1 class="font text-white ">E-voting system</h1>
+    </div>
+    <div class="container d-flex justify-content-center ">
+      <h3 class="text-white my-3 ">India's Most Secure voting system</h3>
+    </div>
+    <center>
+      <div class="col-md-5" style="position: relative;
+			top: 75px;">
+        <table class="table text-white">
+          <thead>
+            <tr>
+              <th scope="col">Candidates</th>
+              <th scope="col" id="cad1">Candidate 1</th>
+              <th scope="col" id="cad2">Candidate 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Votes</th>
+              <td id="cad1count">0</td>
+              <td id="cad2count">0</td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td><button onclick="Vote(1)" class="btn btn-primary">Vote</button></td>
+              <td><button onclick="Vote(2)" class="btn btn-primary">Vote</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </br>
+
+    </center>
+  </div>
+  <div class="alert alert-primary my-5 " style="display: none;" id="alert" role="alert">
+    hiii
+  </div>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+    integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+  <script src="js/contract.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script language="javascript" type="text/javascript" src="js/web3.min.js"></script>
+  <script src="vendor/web3/dist/web3.js"></script>
+  <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+  <script>
+    var myContract;
+    let web3
+    if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
+      //We are in the browser and metamask is running
+      web3 = new Web3(window.web3.currentProvider);
+    }
+    async function CheckMetamaskConnection() {
+      // Modern dapp browsers...
+      if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+        try {
+          // Request account access if needed
+          await ethereum.enable();
+          // Acccounts now exposed
+          return true;
+        } catch (error) {
+          // User denied account access...
+          return false;
+        }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+        window.web3 = new Web3(web3.currentProvider);
+        // Acccounts always exposed
+
+        return true;
+      }
+      // Non-dapp browsers...
+      else {
+        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+        return false;
+      }
+    }
+
+    $(document).ready(async function () {
+      var IsMetamask = await CheckMetamaskConnection();
+      if (IsMetamask) {
+        myContract = await web3.eth.contract(SmartContractABI).at(SmartContractAddress);
+        getCandidate(1);
+        getCandidate(2);
+
+        await myContract.eventVote({
+          fromBlock: 0
+        }, function (err, event) {
+          console.log("event :", event);
+          getCandidate(event.args._candidateid.toNumber());
+        });
+        console.log("myContract :", myContract);
+        console.log("Metamask detected!")
+      } else {
+        console.log("Metamask not detected");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Metamask not detected!',
+          onClose() {
+            location.reload();
+          }
+        });
+      }
+    });
+
+    async function getCandidate(cad) {
+      await myContract.candidates(cad, function (err, result) {
+        if (!err) {
+          document.getElementById("cad" + cad).innerHTML = result[1];
+          document.getElementById("cad" + cad + 'count').innerHTML = result[2].toNumber();
+        }
+      });
+    }
+
+    async function Vote(cad) {
+      await myContract.vote(cad, function (err, result) {
+        if (!err) {
+          console.log("We are winning!");
+        } else {
+          console.log("Can not connect to the smart contract");
+        }
+      })
+    }
+   /* function yourFunction() {
+      const alert = document.getElementById("alert")
+      const can1 = document.getElementById("cad1").innerText
+      const can2 = document.getElementById("cad2").innerText
+      const can1N = Number(document.getElementById("cad1count").innerText)
+      const can2N = Number(document.getElementById("cad2count").innerText)
+     var obj = { [can1]: can1N, [can2]: can2N};
+      var maxCanN  = (Object.keys(obj).reduce(function (can1, can2) { return obj[can1] > obj[can2] ? can1 : can2 }));
+      var max = obj[maxCanN]
+      const html = `<span class="d-flex justify-content-center" ><strong class="mx-2">${maxCanN} </strong> Having Maximum votes : <strong class="mx-2">${max}</strong></span>`
+      alert.style.display = "block";
+      alert.innerHTML = html;
+      
+      
+    }*/
+    setTimeout(()=>{
+      console.log("success")
+      const alert = document.getElementById("alert")
+      const can1 = document.getElementById("cad1").innerText
+      const can2 = document.getElementById("cad2").innerText
+      const can1N = Number(document.getElementById("cad1count").innerText)
+      const can2N = Number(document.getElementById("cad2count").innerText)
+      const obj={[can1]:can1N,[can2]:can2N}
+      localStorage.setItem('info',JSON.stringify(obj))
+      console.log(localStorage.getItem('info'))
+    },5000)
+
+  </script>
+</body>
+
+</html>
